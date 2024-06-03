@@ -1,0 +1,17 @@
+body {
+    background-image: url('../img/Fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+.bg-purple-dark {
+    background-color: #6a0dad;
+  }
+  
+  .navbar-purple-dark .navbar-brand,
+  .navbar-purple-dark .nav-link {
+    color: #ffffff;
+  }
+  
