@@ -41,6 +41,10 @@ IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Personas'
 DROP TABLE Personas
 GO
 
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Contactos')
+DROP TABLE Contactos
+GO
+
 --Crear las tablas nuevas
 
 CREATE TABLE Personas (
@@ -85,6 +89,15 @@ CREATE TABLE Reservas (
     Estado CHAR(1) CHECK (Estado IN ('P', 'C')) NOT NULL,-- P: Pendiente C: Cerrada
     CONSTRAINT FK_Reservas_Personas FOREIGN KEY (ID_Persona) REFERENCES Personas(ID_Persona),
     CONSTRAINT FK_Reservas_Mesas FOREIGN KEY (ID_Mesa) REFERENCES Mesas(ID_Mesa)
+);
+GO
+
+CREATE TABLE Contactos (
+    ID_Contacto INT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Correo VARCHAR(50) NOT NULL,
+    Asunto VARCHAR(50) NOT NULL,
+    Mensaje VARCHAR(255) NOT NULL
 );
 GO
 
